@@ -6,16 +6,34 @@ class TopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 28, horizontal: 32),
+      padding: const EdgeInsets.symmetric(vertical: 28, horizontal: 28),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Dashboard',
-            style: Theme.of(context).textTheme.headline1,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Text(
+                  'Dashboard',
+                  style: Theme.of(context).textTheme.headline1,
+                ),
+              ),
+              Container(
+                height: 4,
+                width: 60,
+                decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(4)),
+              ),
+            ],
           ),
-          Row(children: [
+          Expanded(
+            child: Container(),
+            flex: 1,
+          ),
+          Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
             IconButton(
               icon: Icon(
                 Icons.search,
