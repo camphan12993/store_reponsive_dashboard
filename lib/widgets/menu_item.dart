@@ -23,7 +23,6 @@ class _MenuItemState extends State<MenuItem> with TickerProviderStateMixin {
 
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
     super.didChangeDependencies();
     _animationController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 200));
@@ -32,8 +31,9 @@ class _MenuItemState extends State<MenuItem> with TickerProviderStateMixin {
     _colorIcon =
         ColorTween(begin: Colors.white, end: Theme.of(context).primaryColor)
             .animate(_iconAnimationController);
-    _colorBg = ColorTween(begin: Colors.transparent, end: Colors.white)
-        .animate(_animationController);
+    _colorBg =
+        ColorTween(begin: Theme.of(context).primaryColor, end: Colors.white)
+            .animate(_animationController);
   }
 
   @override
