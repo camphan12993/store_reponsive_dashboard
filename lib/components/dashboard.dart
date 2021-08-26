@@ -5,6 +5,8 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:test_web/components/status_card.dart';
 import 'package:test_web/theme.dart';
 
+import 'order_table.dart';
+
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
 
@@ -188,6 +190,8 @@ class Dashboard extends StatelessWidget {
           ),
         )
         //
+        ,
+        OrderTable()
       ],
     );
   }
