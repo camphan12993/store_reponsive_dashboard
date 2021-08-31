@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_web/pages/news.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({Key? key}) : super(key: key);
@@ -53,7 +54,12 @@ class TopBar extends StatelessWidget {
                 Icons.article_outlined,
                 color: Theme.of(context).primaryColor,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NewsPage()),
+                );
+              },
             )
           ])
         ],

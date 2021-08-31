@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:test_web/widgets/menu_item.dart';
 
+final List<MenuItem> menuItems = [
+  MenuItem(icon: Icons.home_outlined, label: 'Home'),
+  MenuItem(icon: Icons.settings, label: 'Settings'),
+  MenuItem(icon: Icons.person, label: 'User'),
+  MenuItem(icon: Icons.contact_mail, label: 'Contact'),
+];
+
 class SideBar extends StatelessWidget {
   const SideBar({Key? key}) : super(key: key);
 
@@ -8,8 +15,9 @@ class SideBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(color: Theme.of(context).primaryColor),
-      width: 60,
+      padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: 24,
@@ -29,21 +37,8 @@ class SideBar extends StatelessWidget {
           ),
           Expanded(
               child: Column(
-            children: [
-              MenuItem(icon: Icons.home_outlined, label: ''),
-              SizedBox(
-                height: 14,
-              ),
-              MenuItem(icon: Icons.home_outlined, label: ''),
-              SizedBox(
-                height: 14,
-              ),
-              MenuItem(icon: Icons.home_outlined, label: ''),
-              SizedBox(
-                height: 14,
-              ),
-              MenuItem(icon: Icons.home_outlined, label: '')
-            ],
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: menuItems,
           ))
         ],
       ),

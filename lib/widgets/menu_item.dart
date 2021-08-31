@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_web/constaints.dart';
+import 'package:test_web/responsive.dart';
 
 class MenuItem extends StatefulWidget {
   final IconData icon;
@@ -56,16 +58,34 @@ class _MenuItemState extends State<MenuItem> with TickerProviderStateMixin {
             _iconAnimationController.reverse();
           },
           child: Container(
+            width: Responsive.minWidth(context, screenSm) == true ? 160 : null,
+            margin: EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
                 color: _colorBg.value, borderRadius: BorderRadius.circular(8)),
             child: Padding(
               padding: EdgeInsets.all(8),
               child: AnimatedBuilder(
                 animation: _colorIcon,
-                builder: (context, child) => Icon(
-                  widget.icon,
-                  size: 24,
-                  color: _colorIcon.value,
+                builder: (context, child) => Row(
+                  children: [
+                    Icon(
+                      widget.icon,
+                      size: 20,
+                      color: _colorIcon.value,
+                    ),
+                    if (Responsive.minWidth(context, screenSm) == true) ...[
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Text(
+                        widget.label,
+                        style: TextStyle(
+                          color: _colorIcon.value,
+                        ),
+                      )
+                    ] else
+                      SizedBox.shrink(),
+                  ],
                 ),
               ),
             ),
