@@ -3,15 +3,45 @@ import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:test_web/components/status_card.dart';
-import 'package:test_web/theme.dart';
+import 'package:test_web/constaints.dart';
+import 'package:test_web/responsive.dart';
 
 import 'order_table.dart';
 
+final List<StatusCard> statusCards = [
+  StatusCard(
+      name: 'Income',
+      value: 11234,
+      icon: Icons.access_alarms_outlined,
+      isSelected: true),
+  StatusCard(name: 'Income', value: 11234, icon: Icons.access_alarms_outlined),
+  StatusCard(name: 'Income', value: 11234, icon: Icons.access_alarms_outlined),
+  StatusCard(name: 'Income', value: 11234, icon: Icons.access_alarms_outlined),
+];
+
 class Dashboard extends StatelessWidget {
-  const Dashboard({Key? key}) : super(key: key);
+  Dashboard({Key? key}) : super(key: key);
+
+  int getCrossItemsCount(BuildContext context, Size size) {
+    if (size.width > screenXxl) return 4;
+    if (size.width > screenMd) return 2;
+    return 1;
+  }
+
+  double getCrossItemAspect(BuildContext context, Size size) {
+    if (size.width >= screenXxl) return 1.9;
+    if (size.width >= screenXl) return 3;
+    if (size.width >= screenLg) return 2;
+    if (size.width >= screenMd) return 1.6;
+    if (size.width >= screenSm) return 2.6;
+    if (size.width >= 440) return 2.2;
+    return 2;
+  }
 
   @override
   Widget build(BuildContext context) {
+    final Size _size = MediaQuery.of(context).size;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -46,47 +76,16 @@ class Dashboard extends StatelessWidget {
         SizedBox(
           height: 24,
         ),
-        Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              StatusCard(
-                  name: 'Income',
-                  value: 11234,
-                  icon: Icons.access_alarms_outlined,
-                  isSelected: true),
-              SizedBox(
-                height: 24,
-              ),
-              StatusCard(
-                  name: 'Income',
-                  value: 11234,
-                  icon: Icons.access_alarms_outlined),
-              SizedBox(
-                height: 24,
-              ),
-              StatusCard(
-                  name: 'Income',
-                  value: 11234,
-                  icon: Icons.access_alarms_outlined),
-              SizedBox(
-                height: 24,
-              ),
-              StatusCard(
-                  name: 'Income',
-                  value: 11234,
-                  icon: Icons.access_alarms_outlined),
-              SizedBox(
-                height: 24,
-              ),
-              StatusCard(
-                  name: 'Income',
-                  value: 11234,
-                  icon: Icons.access_alarms_outlined)
-            ],
-          ),
-        ),
+        GridView(
+            padding: EdgeInsets.all(24),
+            children: statusCards,
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: getCrossItemsCount(context, _size),
+                crossAxisSpacing: 24,
+                mainAxisSpacing: 24,
+                childAspectRatio: getCrossItemAspect(context, _size))),
         Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(

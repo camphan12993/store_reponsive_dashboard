@@ -46,6 +46,7 @@ class _MenuItemState extends State<MenuItem> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final Size _size = MediaQuery.of(context).size;
     return AnimatedBuilder(
       animation: _colorBg,
       builder: (context, child) => MouseRegion(
@@ -58,7 +59,7 @@ class _MenuItemState extends State<MenuItem> with TickerProviderStateMixin {
             _iconAnimationController.reverse();
           },
           child: Container(
-            width: Responsive.minWidth(context, screenSm) == true ? 160 : null,
+            width: _size.width > screenMd ? 160 : null,
             margin: EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
                 color: _colorBg.value, borderRadius: BorderRadius.circular(8)),
@@ -73,7 +74,7 @@ class _MenuItemState extends State<MenuItem> with TickerProviderStateMixin {
                       size: 20,
                       color: _colorIcon.value,
                     ),
-                    if (Responsive.minWidth(context, screenSm) == true) ...[
+                    if (_size.width > screenMd) ...[
                       SizedBox(
                         width: 16,
                       ),
