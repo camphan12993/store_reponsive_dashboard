@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_web/pages/main-page.dart';
+import 'package:test_web/pages/dashboard.dart';
 import 'package:test_web/constaints.dart';
 
 void main() {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
                 bodyText2: TextStyle())
             .apply(bodyColor: textColor),
       ),
-      home: MainPage(),
+      home: Dashboard(),
     );
   }
 }

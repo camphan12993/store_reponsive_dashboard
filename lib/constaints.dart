@@ -4,8 +4,14 @@ const textColor = Color(0xff585858);
 const primaryLight = Color(0xffCCECDF);
 
 // breakpoint
-const int screenSm = 576;
-const int screenMd = 768;
-const int screenLg = 992;
-const int screenXl = 1200;
-const int screenXxl = 1400;
+const double screenSm = 576;
+const double screenMd = 768;
+const double screenLg = 992;
+const double screenXl = 1200;
+const double screenXxl = 1400;
+
+// component
+const double newsPageWidth = 400;
+const double topBarHeight = 80;
+const double sideBarHeight = 300;
+const double componentPadding = 24.0;
