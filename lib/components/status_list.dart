@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_web/widgets/status_card.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:store_responsive_dashboard/widgets/status_card.dart';
 
 import '../constaints.dart';
 
@@ -15,24 +16,6 @@ final List<StatusCard> statusCards = [
 ];
 
 class StatusList extends StatelessWidget {
-  const StatusList({Key? key}) : super(key: key);
-
-  int getCrossItemsCount(BuildContext context, Size size) {
-    if (size.width > screenXxl) return 4;
-    if (size.width > screenMd) return 2;
-    return 1;
-  }
-
-  double getCrossItemAspect(BuildContext context, Size size) {
-    if (size.width >= screenXxl) return 1.9;
-    if (size.width >= screenXl) return 3;
-    if (size.width >= screenLg) return 2;
-    if (size.width >= screenMd) return 1.6;
-    if (size.width >= screenSm) return 2.6;
-    if (size.width >= 440) return 2.2;
-    return 2;
-  }
-
   @override
   Widget build(BuildContext context) {
     final Size _size = MediaQuery.of(context).size;
@@ -43,33 +26,40 @@ class StatusList extends StatelessWidget {
             Text(
               'Weekly',
               style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xffBBBBBB)),
+                fontSize: 16,
+              ),
             ),
             SizedBox(width: 14),
             Text('Monthly',
                 style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff585858))),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                )),
             SizedBox(
               width: 14,
             ),
             Text('Yearly',
                 style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xffBBBBBB))),
+                  fontSize: 16,
+                )),
           ],
         ),
-        Row(
-          children: statusCards
-              .map((e) => Expanded(
-                    child: e,
-                  ))
-              .toList(),
-        )
+        SizedBox(
+          height: componentPadding,
+        ),
+        StaggeredGridView.countBuilder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            crossAxisCount: 4,
+            mainAxisSpacing: componentPadding,
+            crossAxisSpacing: componentPadding,
+            itemCount: statusCards.length,
+            itemBuilder: (context, index) => statusCards[index],
+            staggeredTileBuilder: (index) {
+              if (_size.width > screenXxl) return StaggeredTile.fit(1);
+              if (_size.width > screenSm) return StaggeredTile.fit(2);
+              return StaggeredTile.fit(4);
+            })
       ],
     );
   }

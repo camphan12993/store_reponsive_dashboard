@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:test_web/components/charts.dart';
-import 'package:test_web/components/status_list.dart';
-import 'package:test_web/layout/main_layout.dart';
+import 'package:store_responsive_dashboard/components/charts.dart';
+import 'package:store_responsive_dashboard/components/status_list.dart';
+import 'package:store_responsive_dashboard/constaints.dart';
+import 'package:store_responsive_dashboard/layout/main_layout.dart';
 import '../components/order_table.dart';
 
 class Dashboard extends StatelessWidget {
@@ -14,7 +15,13 @@ class Dashboard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         StatusList(),
+        SizedBox(
+          height: componentPadding,
+        ),
         Charts(),
+        SizedBox(
+          height: componentPadding,
+        ),
         OrderTable(),
       ],
     ));

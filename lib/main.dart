@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_web/pages/dashboard.dart';
-import 'package:test_web/constaints.dart';
+import 'package:store_responsive_dashboard/pages/dashboard.dart';
+import 'package:store_responsive_dashboard/constaints.dart';
 
 void main() {
   runApp(MyApp());

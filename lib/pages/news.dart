@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_web/components/new-list.dart';
+import 'package:store_responsive_dashboard/components/new-list.dart';
 
 class NewsPage extends StatelessWidget {
   const NewsPage({Key? key}) : super(key: key);

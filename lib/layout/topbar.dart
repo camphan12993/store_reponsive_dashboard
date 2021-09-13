@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_web/constaints.dart';
-import 'package:test_web/pages/news.dart';
+import 'package:store_responsive_dashboard/constaints.dart';
+import 'package:store_responsive_dashboard/pages/news.dart';
 
 class TopBar extends StatelessWidget {
   final bool _showDesktop;

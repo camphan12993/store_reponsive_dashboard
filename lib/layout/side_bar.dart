@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_web/widgets/menu_item.dart';
+import 'package:store_responsive_dashboard/widgets/menu_item.dart';
 
 final List<MenuItem> menuItems = [
   MenuItem(icon: Icons.home_outlined, label: 'Home'),

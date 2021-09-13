@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_web/constaints.dart';
-import 'package:test_web/widgets/new_item.dart';
+import 'package:store_responsive_dashboard/widgets/new_item.dart';
 
 final news = <New>[
   New(

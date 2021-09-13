@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_web/constaints.dart';
+import 'package:store_responsive_dashboard/constaints.dart';
 
 class MenuItem extends StatefulWidget {
   final IconData icon;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test_web/components/new-list.dart';
-import 'package:test_web/layout/side_bar.dart';
-import 'package:test_web/layout/topbar.dart';
+import 'package:store_responsive_dashboard/components/new-list.dart';
+import 'package:store_responsive_dashboard/layout/side_bar.dart';
+import 'package:store_responsive_dashboard/layout/topbar.dart';
 
 import '../constaints.dart';
 
@@ -12,7 +12,7 @@ class MainLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size _size = MediaQuery.of(context).size;
-    final _showDesktop = _size.width >= screenXl;
+    final _showDesktop = _size.width >= screenXxl;
     return Scaffold(
         body: SafeArea(
       child: Row(
