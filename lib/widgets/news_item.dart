@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:store_responsive_dashboard/constaints.dart';
+import 'package:store_responsive_dashboard/model.dart';
 
-class New {
-  final String title;
-  final String imgUrl;
-  final String time;
-  final String description;
-
-  New(
-      {required this.time,
-      required this.title,
-      required this.imgUrl,
-      this.description = ''});
-}
-
-class NewItem extends StatelessWidget {
-  final New data;
-  const NewItem({required this.data, Key? key}) : super(key: key);
+class NewsItem extends StatelessWidget {
+  final News data;
+  const NewsItem(this.data);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +22,7 @@ class NewItem extends StatelessWidget {
             height: 70,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(4),
-                color: Colors.red,
+                color: primary,
                 image: DecorationImage(
                     fit: BoxFit.cover, image: AssetImage(data.imgUrl))),
           ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:store_responsive_dashboard/constaints.dart';
 import 'package:store_responsive_dashboard/widgets/bar_chart.dart';
 import 'package:store_responsive_dashboard/widgets/pie_chart.dart';
-import 'package:store_responsive_dashboard/widgets/linechart.dart';
 
 class Charts extends StatelessWidget {
   const Charts({Key? key}) : super(key: key);
@@ -13,7 +12,7 @@ class Charts extends StatelessWidget {
     if (_size.width >= screenLg) {
       return Row(
         children: [
-          Flexible(flex: 1, child: BarChartSample1()),
+          Flexible(flex: 1, child: BarChartSample()),
           SizedBox(
             width: componentPadding,
           ),
@@ -27,7 +26,7 @@ class Charts extends StatelessWidget {
 
     return Column(
       children: [
-        BarChartSample1(),
+        BarChartSample(),
         SizedBox(
           height: componentPadding,
         ),

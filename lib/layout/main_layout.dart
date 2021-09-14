@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:store_responsive_dashboard/components/new-list.dart';
-import 'package:store_responsive_dashboard/layout/side_bar.dart';
+import 'package:store_responsive_dashboard/components/news_list.dart';
+import 'package:store_responsive_dashboard/layout/sidebar.dart';
 import 'package:store_responsive_dashboard/layout/topbar.dart';
 
 import '../constaints.dart';
@@ -33,7 +33,7 @@ class MainLayout extends StatelessWidget {
           ),
           Container(
             width: _showDesktop ? newsPageWidth : 0,
-            child: Newlist(_showDesktop),
+            child: NewsList(_showDesktop),
           )
         ],
       ),

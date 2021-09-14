@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:store_responsive_dashboard/constaints.dart';
-
-class Order {
-  final IconData icon;
-  final String name;
-  final String status;
-  final String date;
-  Order(this.icon, this.name, this.status, this.date);
-}
+import '../model.dart';
 
 final orders = <Order>[
   Order(Icons.checkroom_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
-  Order(Icons.ac_unit, 'Black T-shirt', 'Delivered', '12/09/2021'),
-  Order(Icons.ac_unit, 'Black T-shirt', 'Delivered', '12/09/2021'),
-  Order(Icons.ac_unit, 'Black T-shirt', 'Delivered', '12/09/2021'),
+  Order(Icons.pool_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
+  Order(
+      Icons.dry_cleaning_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
+  Order(
+      Icons.beach_access_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
   Order(Icons.ac_unit, 'Black T-shirt', 'Delivered', '12/09/2021'),
 ];
 
@@ -87,6 +82,7 @@ class OrderTable extends StatelessWidget {
       child: DataTable(
         dataRowHeight: 70,
         columns: columns,
+        columnSpacing: 6,
         rows: rows,
         headingRowHeight: 0,
         dividerThickness: 0,

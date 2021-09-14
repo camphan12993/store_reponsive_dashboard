@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:store_responsive_dashboard/model.dart';
 
 class StatusCard extends StatelessWidget {
-  final String name;
-  final int value;
-  final IconData icon;
-  final bool isSelected;
-  const StatusCard(
-      {Key? key,
-      required this.name,
-      required this.value,
-      required this.icon,
-      this.isSelected = false})
-      : super(key: key);
+  final BussinessStatus data;
+
+  const StatusCard(this.data);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,8 +19,9 @@ class StatusCard extends StatelessWidget {
                 offset: Offset(0, -2))
           ],
           borderRadius: BorderRadius.circular(16),
-          color:
-              this.isSelected ? Theme.of(context).primaryColor : Colors.white),
+          color: this.data.isSelected
+              ? Theme.of(context).primaryColor
+              : Colors.white),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -35,14 +30,14 @@ class StatusCard extends StatelessWidget {
           children: [
             Container(
               child: Icon(
-                this.icon,
-                color: this.isSelected
+                this.data.icon,
+                color: this.data.isSelected
                     ? Theme.of(context).primaryColor
                     : Colors.white,
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
-                color: this.isSelected
+                color: this.data.isSelected
                     ? Colors.white
                     : Theme.of(context).primaryColor,
               ),
@@ -53,11 +48,11 @@ class StatusCard extends StatelessWidget {
               height: 6,
             ),
             Text(
-              this.value.toString() + '\$',
+              this.data.value.toString(),
               style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: this.isSelected
+                  color: this.data.isSelected
                       ? Colors.white
                       : Theme.of(context).primaryColor),
             ),
@@ -65,11 +60,11 @@ class StatusCard extends StatelessWidget {
               height: 4,
             ),
             Text(
-              this.name,
+              this.data.name,
               style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                  color: this.isSelected
+                  color: this.data.isSelected
                       ? Colors.white
                       : Theme.of(context).primaryColor),
             )

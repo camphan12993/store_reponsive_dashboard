@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:store_responsive_dashboard/constaints.dart';
 
 class MyPieChart extends StatelessWidget {
   const MyPieChart({Key? key}) : super(key: key);
 
-  List<PieChartSectionData> showingSections(BuildContext context) {
+  List<PieChartSectionData> getChartSections(
+      BuildContext context, double radius) {
     return ([
       PieChartSectionData(
           color: Theme.of(context).primaryColor,
           value: 80,
-          radius: 40,
+          radius: radius,
           showTitle: false),
       PieChartSectionData(
         color: Color(0xffCCECDF),
         value: 20,
-        radius: 40,
+        radius: radius,
         showTitle: false,
       ),
     ]);
@@ -22,6 +24,7 @@ class MyPieChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size _size = MediaQuery.of(context).size;
     return AspectRatio(
       aspectRatio: 1.5,
       child: Padding(
@@ -30,7 +33,9 @@ class MyPieChart extends StatelessWidget {
           children: [
             PieChart(
               PieChartData(
-                  sections: showingSections(context), startDegreeOffset: 270),
+                  sections: getChartSections(
+                      context, _size.width >= screenMd ? 40 : 20),
+                  startDegreeOffset: 270),
             ),
             Center(
               child: Text(

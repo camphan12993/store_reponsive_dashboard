@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:store_responsive_dashboard/model.dart';
 import 'package:store_responsive_dashboard/widgets/status_card.dart';
 
 import '../constaints.dart';
 
-final List<StatusCard> statusCards = [
-  StatusCard(
-      name: 'Income',
-      value: 11234,
-      icon: Icons.access_alarms_outlined,
-      isSelected: true),
-  StatusCard(name: 'Income', value: 11234, icon: Icons.access_alarms_outlined),
-  StatusCard(name: 'Income', value: 11234, icon: Icons.access_alarms_outlined),
-  StatusCard(name: 'Income', value: 11234, icon: Icons.access_alarms_outlined),
+final List<BussinessStatus> statusList = [
+  BussinessStatus('Total Sales', '1123456 \$', Icons.show_chart_outlined, true),
+  BussinessStatus('Total Profit', '11234 \$', Icons.attach_money_outlined),
+  BussinessStatus('Orders', '1236', Icons.show_chart_outlined),
+  BussinessStatus('Customers', '11234', Icons.people_outline_outlined),
 ];
 
 class StatusList extends StatelessWidget {
@@ -53,8 +50,8 @@ class StatusList extends StatelessWidget {
             crossAxisCount: 4,
             mainAxisSpacing: componentPadding,
             crossAxisSpacing: componentPadding,
-            itemCount: statusCards.length,
-            itemBuilder: (context, index) => statusCards[index],
+            itemCount: statusList.length,
+            itemBuilder: (context, index) => StatusCard(statusList[index]),
             staggeredTileBuilder: (index) {
               if (_size.width > screenXxl) return StaggeredTile.fit(1);
               if (_size.width > screenSm) return StaggeredTile.fit(2);
