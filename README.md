@@ -1,6 +1,6 @@
-# store_responsive_dashboard
+# Store Responsive Dashboard
 
-A new Flutter project.
+A Flutter project.
 
 ## Getting Started
 

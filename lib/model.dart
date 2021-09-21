@@ -10,9 +10,10 @@ class MenuItem {
 class Order {
   final IconData icon;
   final String name;
+  final int packs;
   final String status;
   final String date;
-  Order(this.icon, this.name, this.status, this.date);
+  Order(this.icon, this.name, this.packs, this.status, this.date);
 }
 
 class News {

@@ -3,16 +3,18 @@ import 'package:store_responsive_dashboard/constaints.dart';
 import '../model.dart';
 
 final orders = <Order>[
-  Order(Icons.checkroom_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
-  Order(Icons.pool_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
   Order(
-      Icons.dry_cleaning_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
+      Icons.checkroom_outlined, 'Black T-shirt', 2, 'Delivered', '12/09/2021'),
+  Order(Icons.pool_outlined, 'Black T-shirt', 3, 'Delivered', '12/09/2021'),
+  Order(Icons.dry_cleaning_outlined, 'Black T-shirt', 4, 'Delivered',
+      '12/09/2021'),
+  Order(Icons.beach_access_outlined, 'Black T-shirt', 6, 'Delivered',
+      '12/09/2021'),
   Order(
-      Icons.beach_access_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
-  Order(Icons.checkroom_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
+      Icons.checkroom_outlined, 'Black T-shirt', 2, 'Delivered', '12/09/2021'),
 ];
 
-final columnNames = ['', 'Time', ''];
+final columnNames = ['', '', 'Time', ''];
 
 class OrderTable extends StatelessWidget {
   const OrderTable({Key? key}) : super(key: key);
@@ -44,7 +46,7 @@ class OrderTable extends StatelessWidget {
                         ]),
                   ),
                   SizedBox(
-                    width: 8,
+                    width: 16,
                   ),
                   Expanded(
                     child: Text(
@@ -56,6 +58,9 @@ class OrderTable extends StatelessWidget {
                     ),
                   )
                 ],
+              )),
+              DataCell(Text(
+                order.packs.toString() + ' Packs',
               )),
               DataCell(Text(
                 order.date,
