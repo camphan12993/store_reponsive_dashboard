@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Store Dashboard',
       theme: ThemeData(
-        fontFamily: 'Nunito',
-        primaryColor: primary,
-        textTheme: TextTheme().apply(bodyColor: textColor),
-      ),
+          fontFamily: 'Nunito',
+          primaryColor: primary,
+          textTheme: TextTheme().apply(bodyColor: textColor),
+          backgroundColor: Colors.yellow),
       home: Dashboard(),
       debugShowCheckedModeBanner: false,
     );
