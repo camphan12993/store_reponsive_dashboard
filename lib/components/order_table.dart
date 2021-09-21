@@ -9,7 +9,7 @@ final orders = <Order>[
       Icons.dry_cleaning_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
   Order(
       Icons.beach_access_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
-  Order(Icons.ac_unit, 'Black T-shirt', 'Delivered', '12/09/2021'),
+  Order(Icons.checkroom_outlined, 'Black T-shirt', 'Delivered', '12/09/2021'),
 ];
 
 final columnNames = ['', 'Time', ''];

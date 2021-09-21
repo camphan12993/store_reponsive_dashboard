@@ -1,8 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:store_responsive_dashboard/constaints.dart';
 import 'package:store_responsive_dashboard/model.dart';
 import 'package:store_responsive_dashboard/widgets/news_item.dart';
 
 final news = <News>[
+  News(
+    '5 minutes ago',
+    'Lorem ipsum dolor sit amet, consectetur',
+    'assets/imgs/shop.jpeg',
+    'Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur',
+  ),
+  News(
+    '5 minutes ago',
+    'Lorem ipsum dolor sit amet, consectetur',
+    'assets/imgs/shop.jpeg',
+    'Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur',
+  ),
+  News(
+    '5 minutes ago',
+    'Lorem ipsum dolor sit amet, consectetur',
+    'assets/imgs/shop.jpeg',
+    'Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur',
+  ),
+  News(
+    '5 minutes ago',
+    'Lorem ipsum dolor sit amet, consectetur',
+    'assets/imgs/shop.jpeg',
+    'Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur',
+  ),
   News(
     '5 minutes ago',
     'Lorem ipsum dolor sit amet, consectetur',
@@ -42,13 +67,12 @@ class NewsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints.expand(),
-      color: Color(0xffE1F5ED),
-      padding: EdgeInsets.symmetric(horizontal: 24),
+      color: primaryLight.withAlpha(100),
+      padding: EdgeInsets.symmetric(horizontal: componentPadding),
       child: Column(
         children: [
           Container(
-            height: 80,
+            height: topBarHeight,
             child: Row(
               children: [
                 this.showDesktop
@@ -64,7 +88,7 @@ class NewsList extends StatelessWidget {
                 Expanded(
                     child: Center(
                   child: Text(
-                    'Latest news',
+                    'Latest News',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
                 ))
@@ -74,7 +98,6 @@ class NewsList extends StatelessWidget {
           Expanded(
             child: SingleChildScrollView(
               child: Column(
-                mainAxisSize: MainAxisSize.min,
                 children: news.map((e) => NewsItem(e)).toList(),
               ),
             ),

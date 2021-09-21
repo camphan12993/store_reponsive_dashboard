@@ -15,9 +15,6 @@ class Dashboard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         StatusList(),
-        SizedBox(
-          height: componentPadding,
-        ),
         Charts(),
         SizedBox(
           height: componentPadding,

@@ -15,21 +15,55 @@
 
     <meta charset="UTF-8" />
     <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-    <meta name="description" content="A new Flutter project." />
+    <meta name="description" content="Store Responsive Dashboard" />
 
     <!-- iOS meta tags & icons -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta
       name="apple-mobile-web-app-title"
-      content="store_responsive_dashboard"
+      content="Store Responsive Dashboard"
     />
     <link rel="apple-touch-icon" href="icons/Icon-192.png" />
 
-    <title>store_responsive_dashboard</title>
+    <title>Store Responsive Dashboard</title>
     <link rel="manifest" href="manifest.json" />
+    <style>
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+      .loader {
+        border: 8px solid #f3f3f3; /* Light grey */
+        border-top: 8px solid #89b5a2; /* Blue */
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
+    <div class="loading">
+      <div class="loader"></div>
+    </div>
     <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->

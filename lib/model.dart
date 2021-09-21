@@ -28,7 +28,6 @@ class BussinessStatus {
   final String name;
   final String value;
   final IconData icon;
-  final bool isSelected;
 
-  BussinessStatus(this.name, this.value, this.icon, [this.isSelected = false]);
+  BussinessStatus(this.name, this.value, this.icon);
 }

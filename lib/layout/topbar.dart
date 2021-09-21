@@ -22,7 +22,7 @@ class TopBar extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
                     'Dashboard',
-                    style: Theme.of(context).textTheme.headline1,
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                   ),
                 ),
                 Positioned(

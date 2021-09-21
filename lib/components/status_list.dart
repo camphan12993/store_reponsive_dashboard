@@ -6,9 +6,9 @@ import 'package:store_responsive_dashboard/widgets/status_card.dart';
 import '../constaints.dart';
 
 final List<BussinessStatus> statusList = [
-  BussinessStatus('Total Sales', '1123456 \$', Icons.show_chart_outlined, true),
+  BussinessStatus('Total Sales', '1123456 \$', Icons.show_chart_outlined),
   BussinessStatus('Total Profit', '11234 \$', Icons.attach_money_outlined),
-  BussinessStatus('Orders', '1236', Icons.show_chart_outlined),
+  BussinessStatus('Orders', '1236', Icons.shopping_cart_outlined),
   BussinessStatus('Customers', '11234', Icons.people_outline_outlined),
 ];
 

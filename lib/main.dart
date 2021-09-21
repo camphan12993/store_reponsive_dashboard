@@ -11,16 +11,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Store Dashboard',
       theme: ThemeData(
         fontFamily: 'Nunito',
         primaryColor: primary,
-        textTheme: TextTheme(
-                headline1: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
-                bodyText2: TextStyle())
-            .apply(bodyColor: textColor),
+        textTheme: TextTheme().apply(bodyColor: textColor),
       ),
       home: Dashboard(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

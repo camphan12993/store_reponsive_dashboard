@@ -19,7 +19,7 @@ class SideBar extends StatelessWidget {
     final Size _size = MediaQuery.of(context).size;
     final bool _isDesktop = _size.width >= screenLg;
     return Container(
-      decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+      decoration: BoxDecoration(color: primary),
       width: _isDesktop ? sideBarDesktopWidth : sideBarMobileWidth,
       padding:
           EdgeInsets.symmetric(vertical: 24, horizontal: _isDesktop ? 24 : 12),
